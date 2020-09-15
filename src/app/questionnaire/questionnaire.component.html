@@ -15,7 +15,80 @@
 
     <!-- Card -->
     <div class="card">
+        <mat-horizontal-stepper labelPosition="bottom" #stepper class="wizard">
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <h1>Let’s start</h1>
+                <div>
+                    <h2>How often you/anyone live and sleep in this residence?</h2>
+                </div>
+                <!-- <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field> -->
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel></ng-template>
+                <!-- <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                         required>
+                </mat-form-field> -->
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel></ng-template>
 
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel></ng-template>
+
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel></ng-template>
+
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+            </mat-step>
+
+            <mat-step>
+              <ng-template matStepLabel></ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+        </mat-horizontal-stepper>
     </div>
+
     <!-- ./Card -->
 </div>
